@@ -83,9 +83,21 @@ inicio:
         goto inicio;
     }
 
-    printf("\nDigite o horário de entrada (hh:mm)");
-    printf("\n-> ");
-    scanf("%d:%d", &horaEntrada, &minutoEntrada);
+    /* HORÁRIO DE ENTRADA */
+
+    do {
+        printf("\nDigite o horário de entrada (hh:mm)");
+        printf("\n-> ");
+        scanf("%d:%d", &horaEntrada, &minutoEntrada);
+
+        if (horaEntrada < 0 || horaEntrada > 23 ||
+            minutoEntrada < 0 || minutoEntrada > 59)
+        {
+            printf("\nHorário inválido! Tente novamente.\n");
+        }
+
+    } while (horaEntrada < 0 || horaEntrada > 23 ||
+             minutoEntrada < 0 || minutoEntrada > 59);
 
     codigo++;
 
@@ -152,9 +164,21 @@ caixa:
             goto caixa;
     }
 
-    printf("\nDigite o horário de saída (hh:mm)");
-    printf("\n-> ");
-    scanf("%d:%d", &horaSaida, &minutoSaida);
+    /* HORÁRIO DE SAÍDA */
+
+    do {
+        printf("\nDigite o horário de saída (hh:mm)");
+        printf("\n-> ");
+        scanf("%d:%d", &horaSaida, &minutoSaida);
+
+        if (horaSaida < 0 || horaSaida > 23 ||
+            minutoSaida < 0 || minutoSaida > 59)
+        {
+            printf("\nHorário inválido! Tente novamente.\n");
+        }
+
+    } while (horaSaida < 0 || horaSaida > 23 ||
+             minutoSaida < 0 || minutoSaida > 59);
 
     /* transforma tudo em minutos */
     entradaTotal = (horaEntrada * 60) + minutoEntrada;
@@ -254,22 +278,10 @@ caixa:
     printf("\nEntrada: %02d:%02d",
            horaEntrada,
            minutoEntrada);
-           if (horaEntrada> 00 && horaEntrada <13) {
-               printf(" am");
-           }
-           else {
-               printf(" pm");
-           }
 
     printf("\nSaída: %02d:%02d",
            horaSaida,
            minutoSaida);
-           if (horaSaida> 00 && horaSaida <13) {
-               printf(" am");
-           }
-           else {
-               printf(" pm");
-           }
 
     printf("\nTempo permanecido: %02d:%02d",
            horas,
