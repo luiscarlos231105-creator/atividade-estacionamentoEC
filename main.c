@@ -41,7 +41,7 @@ inicio:
     printf("\n========= ESTACIONAMENTO =========");
     printf("\n| 1 - Carro      | R$ 5.00/hora |");
     printf("\n| 2 - Moto       | R$ 3.00/hora |");
-    printf("\n| 3 - Camionete  | R$ 8.00/hora |");
+    printf("\n| 3 - Caminhonete  | R$ 8.00/hora |");
     printf("\n| 4 - Sair                      |");
     printf("\n==================================");
 
@@ -62,7 +62,7 @@ inicio:
 
         case 3:
             valorHora = 8;
-            strcpy(tipoVeiculo, "Camionete");
+            strcpy(tipoVeiculo, "Caminhonete");
             break;
 
         case 4:
